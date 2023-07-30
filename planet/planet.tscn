@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3gm10qbwlf3b"]
+
+[ext_resource type="Script" path="res://planet/planet.gd" id="1_vimg3"]
+[ext_resource type="Texture2D" uid="uid://7aar8elu1crf" path="res://planet/sprites/planet00.png" id="2_vpc64"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n575n"]
+radius = 508.476
+
+[node name="planet" type="StaticBody2D"]
+script = ExtResource("1_vimg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_vpc64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n575n")

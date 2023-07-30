@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmt807wygghki"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_8peue"]
+[ext_resource type="Texture2D" uid="uid://dmit684kt5r53" path="res://assets/ship/ship_A.png" id="2_3vgrb"]
+[ext_resource type="Texture2D" uid="uid://bdeigl2yxosiy" path="res://assets/effects/effect_yellow.png" id="3_o1il8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02gp5"]
+size = Vector2(32, 24)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_8peue")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3vgrb")
+
+[node name="yellow_effect" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(0, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_o1il8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_02gp5")
+
+[node name="Camera2D" type="Camera2D" parent="."]
